@@ -1,0 +1,86 @@
+@use '../abstract/' as a;
+
+.nav{
+    background-color: a.$pri-col-br;
+    border-bottom: 4px solid black;
+    & .warp{
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+    }
+    &__logo{
+        font-size: 3rem;
+        text-transform: uppercase;
+        border-left: 3px solid a.$sec-col;
+        border-bottom: 3px solid a.$sec-col;
+        height: 100%;
+        margin: 2rem 0;
+        // align-self: stretch;
+    }
+    &__list{
+        list-style: none;
+        display: flex;
+        border-radius:0;
+         &-item{
+            & a:link,
+            & a:visited{
+                text-decoration: none;
+                color: a.$sec-col;
+                font-size: 1.8rem;
+                padding: 0 2rem;
+                height: 100%;
+                border: 4px solid a.$sec-col;
+                border-top: none;
+                border-bottom: none;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                 transition: all 0.3s ease-in-out;
+            }
+            &:not(:first-of-type) a:link{
+                border-left: none;            
+            }
+
+            & a:hover{
+                color: white;
+                background-color: a.$sec-col;
+            }
+        }
+        
+       
+    }
+    &__menu{
+        display: flex;
+        &__item{
+            display: flex;
+            // max-height: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 0 2rem;
+            background-color: a.$sec-col;
+            // border: 3px solid a.$white;
+            // transform: scaleY(1.1);
+            border-bottom: 2px solid a.$pri-col-br;
+            border-top:2px solid a.$pri-col-br ;
+
+        }
+        &__item:last-child{
+            border-left: 2px solid a.$pri-col-br;
+            border-bottom: 2px solid a.$pri-col-br;
+        }
+        &-bag{
+            font-size: 3.5rem;
+            cursor: pointer;
+            color: a.$pri-col;
+        }
+        &-link:link,
+        &-link:visited{
+            font-size:2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: a.$white;
+
+        }
+    }
+}

@@ -1,0 +1,68 @@
+
+@use  '../abstract' as a;
+.login{
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    &__form{
+        width: 100%;
+        max-width: 40rem;
+        display: flex;
+        flex-direction: column;
+        &__notice{
+            text-align: center;
+            font-size: 1.6rem;
+        }
+        &__btn{
+            font-size: 1.8rem;
+            // color: a.$sec-color;
+            position: relative;
+            // margin-top: 10%;
+            background: a.$pri-col;
+            padding: 1rem;
+            font-size: 2em;
+             font-weight: 700;
+            letter-spacing: 5px;
+             text-transform: uppercase;
+            transition: all 0.3s ease-in-out 0s;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+             border: 1px solid rgb(51, 51, 51);
+            color: rgb(51, 51, 51);
+             box-shadow: rgb(51, 51, 51) 4px 4px 0px 0px;
+
+             &:hover{
+                left: 4px;
+                top: 4px;
+                box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+             }
+            }
+
+        & > * {
+            display: block;
+            margin-bottom: 3rem;
+        }
+        & div{
+            & label{
+                display: block;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            & input{
+                font-size: 2.2rem;
+                padding: 0.8rem 0.7rem;
+                border: 3px solid #000000;
+                background-color: transparent;
+                // border-bottom: 3px solid black;
+                width: 100%;
+            }
+        }
+       
+
+    }
+}

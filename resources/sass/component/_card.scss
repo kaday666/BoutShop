@@ -1,0 +1,97 @@
+@use '../abstract' as a;
+.cards{
+    padding: 5rem 0;
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    // background-color: black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 5rem;
+    grid-row-gap: 3rem;
+
+}
+.card{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+     height: 40rem;
+    border: 3px solid a.$sec-col;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    background-color: a.$white-lg;
+    transition: transform 0.3s ease-in;
+    
+    &__imgs{
+        border-radius: 1rem;
+        border-bottom-left-radius: 6rem;
+        border-bottom-right-radius: 6rem;
+        border: 3px solid a.$sec-col;
+        width: 100%;
+        max-width: 100%;
+        flex-basis: 80%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: a.$pri-col-br;
+    }
+    &__img {
+        min-width: 0;
+        min-height: 0;
+        // width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        // object-fit: cover;
+        top: 0;
+        // left: 0;
+        transition: opacity 0.8s ease;
+        &-1{
+           opacity: 1;
+        }
+        &-2{
+            opacity: 0;
+        }
+    }
+    &__body{
+        padding: 0 1rem;
+        flex: 1;
+        // margin-top: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & h5{
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        & span{
+            font-size: 1.6rem;
+        }
+        &  a:link,
+        & a:visited{
+            text-decoration: none;
+            color:a.$white;
+            background-color: a.$sec-col;
+            font-size: 2rem;
+            // text-decoration: underline;
+            padding: 1rem;
+            letter-spacing: 2px;
+            border-radius: 1rem;
+        }
+    }
+
+    &:hover{
+        transform: scale(1.01);
+    }
+
+    &:hover  &__img-1{
+        opacity: 0;
+    }
+    &:hover  &__img-2{
+        opacity: 1;
+    }
+}

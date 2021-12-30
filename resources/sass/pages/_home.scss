@@ -1,0 +1,247 @@
+@use '../abstract/color' as c;
+
+//hero  bannnner section start ----------->
+.hero{
+    width: 100%;
+     height: calc(100vh - 5rem);;
+    // background-color: rebeccapurple;
+    background-image: url('/img/hero.svg');
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    align-content: center;
+    grid-template-columns: minmax(1rem,1fr) minmax(0,60rem) minmax(1rem,1fr);
+    grid-template-rows: max-content min-content min-content min-content;
+}
+.hero > * {
+    color: white;
+    grid-column: 2 /-2;
+    margin: 4rem 0;
+}
+.hero h1{
+    
+    font-size:5rem;
+    font-weight: 100;
+    margin-bottom: 0;
+}
+.hero h3{
+    font-size: 3rem;
+}
+.hero a:link,
+.hero a:visited{
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: c.$pri-col;
+    width: 20rem;
+    padding: 1rem 1rem;
+}
+//hero  bannnner section end ----------->
+
+//top item of the month start---------->
+.top{
+    width: 100%;
+    background-color: c.$pri-col;
+    padding: 5rem 0;
+    // height: 50rem;
+
+    &__header{
+       display: grid;
+       grid-template-columns: minmax(1rem,1fr) repeat(3,minmax(25rem,35rem)) minmax(1rem,1fr);
+        justify-content: flex-start;
+       align-content: flex-start;
+    }
+    & h4{
+        font-size: 3rem;
+        margin-left: -2rem;
+        margin-bottom: 3rem;
+        text-transform: uppercase;;
+        letter-spacing: 1px;
+        grid-column: 2/ 5;
+        
+    }
+    &__cards{
+    display: grid;
+    grid-template-columns: minmax(1rem,1fr) repeat(3,minmax(25rem,35rem)) minmax(1rem,1fr);
+    grid-gap:2rem;
+    // padding: 10rem 0;
+    // @include b.respond(tab-pot){
+    //     display: grid;
+    //     grid-template-columns: minmax(1rem,1fr) minmax(0px,40rem) minmax(1rem,1fr);
+    //     grid-row-gap:3rem;
+      
+    // }
+    }
+    &__card{
+        padding: 1rem;
+        border: 4px solid c.$sec-col;
+        border-radius: 20px;
+        // grid-column: 2/-2;
+        grid-column: span 1;
+        background-color: c.$white-lg;
+        height: 40rem;
+        display: flex;
+        flex-direction: column;
+        &:first-of-type{
+            grid-column: 2/ span 1;
+        }
+        &-head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: c.$white;
+            background-color: c.$sec-col;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            flex: 1;
+          
+        }
+        &-name{
+            font-size: 2rem;
+        }
+        &-price{
+            font-size: 1.6rem;
+        }
+        &-imgs{
+            width: 100%;
+            flex-basis: 80%;
+            min-width: 0;
+            min-height: 0;
+            border: 3px solid c.$sec-col;
+            margin: 1rem 0;
+            background-color: c.$pri-col-br;
+            padding: 0.5rem 0;
+        }
+        &-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &-detail:link,
+        &-detail:visited{
+            flex: 1;
+            background-color: c.$sec-col;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: c.$white;
+            font-size: 2rem;
+            border-radius: 20px;
+            text-decoration: none;
+            padding: 0.5rem 0;
+        }
+
+    }
+    
+}
+//top item of the month end here------>
+
+//footer start here ------------------->
+.footer{
+    width: 100%;
+    min-height: 50vh;
+    background-image: url('/img/footer.svg');
+    background-position: center;
+    background-size: contain;
+    padding: 4rem 0;
+    &__con{
+        width: 100%;
+        max-width: 80%;
+        margin: 0 auto;
+        color: white;
+        display: flex;
+    }
+    &__header{
+        flex-basis:30%;
+        // background-color: pink;
+        & h3{
+            font-size: 4rem;
+        }
+    }
+    &__helpful{
+        flex:1;
+        display: flex;
+        justify-content: space-around;
+    }
+    &__link{
+        list-style: none;
+
+        ;   
+        & li{
+            margin: 1rem 0;
+            
+        }
+       
+        & li a:link,
+        & li a:visited{
+            font-size: 2rem ;
+            color: c.$white;
+            
+        }
+    }
+    &__address{
+        list-style: none;
+        & li{
+            margin: 1rem 0;
+            font-size: 2rem;
+        }
+        & li:first-of-type{
+            letter-spacing: 1px;
+            text-decoration: underline;
+            text-decoration-color:c.$pri-col ;
+        }
+        & li .icon{
+            margin-right: 10px;
+            color: c.$pri-col;
+        }
+    }
+    &__social{
+        // background-color: pink;
+        display: grid;
+        grid-template-columns: min-content min-content;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 1rem;
+        justify-content: center;
+        flex: 1;
+        & a:link,
+        & a:visited{
+            width: 8rem;
+            text-decoration: none;
+            color: #000000;
+            font-size: 3.3rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: rgba(c.$white,1);
+           
+        }
+        // & a::before{
+        //     content: '';
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     background: ;
+        // }
+        & a{
+            & .icon{
+                position: relative;
+                display: block;
+                transition: transform 0.5s ease;
+            }
+            &:hover .icon
+            {
+                transform: scale(1.3);
+                // color:white;
+            }
+        }
+     
+    }
+    &__legal{
+
+    }
+}
+//footer end here----------------------->
